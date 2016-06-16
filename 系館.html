@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+		<meta charset="utf-8">
+		<title>系館</title>
+		<style type = "text/css">
+		body	{background-image: url(back.jpg);
+				 background-repeat: no-repeat;
+				 background-attachment: fixed;
+				 background-position: center;
+				 background-size: cover;}
+		.photo   {position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:1;
+				 }
+		.red	{
+				 position:absolute;
+				 top:445px;
+				 left: 50%;
+				 margin-left:350px;
+				 z-index:3;}
+		.talk	{cursor:pointer;
+				 position:absolute;
+				 top:440px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:2;}
+		.finger	{position:absolute;
+				 top:460px;
+				 left: 50%;
+				 margin-left:-480px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: black;
+				 font-size:35px;}
+		.smallphoto{position:absolute;
+				    top:321px;
+					left:64.65%;
+					margin-left:-100px;
+					z-index:3;
+				   }
+		.bigphoto{position:absolute;
+				    top:40px;
+					left:45%;
+					margin-left:-100px;
+					z-index:2;
+				   }
+		.hide 	{visibility:hidden;
+				 position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;}
+		.but	{cursor:pointer;
+				 position:absolute;
+				 top:460px;
+				 left: 50%;
+				 margin-left:268px;
+				 z-index:2;} 
+		.last  {position:absolute;
+				 top:80px;
+				 left:70%;
+				 margin-left:-500px;
+				 z-index:1;
+				 }
+		.word	{position:absolute;
+				 top:410px;
+				 left: 50%;
+				 margin-left:-480px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: black;
+				 font-size:35px;}
+	    </style>
+		<script>
+			function start()
+			{
+				document.getElementById("far").setAttribute("class","photo");
+				document.getElementById("gym").setAttribute("class","hide");
+				document.getElementById("think").setAttribute("class","hide");
+				document.getElementById("near").setAttribute("class","hide");
+				document.getElementById("mac").setAttribute("class","hide");
+				document.getElementById("think").setAttribute("class","red");
+				document.getElementById("talk").setAttribute("class","talk");
+				document.getElementById("conv").setAttribute("class","word");
+				document.getElementById("conv2").setAttribute("class","finger");
+				document.getElementById("far").addEventListener("click",changephoto,false);
+			}
+			function changephoto()
+			{
+				document.getElementById("near").setAttribute("class","photo");
+				document.getElementById("far").setAttribute("class","hide");
+				document.getElementById("cli").setAttribute("class","smallphoto");
+				document.getElementById("red").setAttribute("class","red");
+				document.getElementById("talk").setAttribute("class","talk");
+				document.getElementById("conv").setAttribute("class","hide");
+				document.getElementById("think").setAttribute("class","hide");
+				document.getElementById("conv2").setAttribute("class","hide");
+				document.getElementById("conv3").setAttribute("class","word");
+				document.getElementById("cli").addEventListener("click",hide2,false);
+			}
+			function hide2()
+			{
+				document.getElementById("near").setAttribute("class","hide");
+				document.getElementById("cli").setAttribute("class","hide");
+				document.getElementById("red").setAttribute("class","hide");
+				document.getElementById("talk").setAttribute("class","hide");
+				document.getElementById("conv3").setAttribute("class","hide");
+				document.getElementById("mac").setAttribute("class","bigphoto");
+				document.getElementById("conv4").setAttribute("class","word");
+				document.getElementById("conv5").setAttribute("class","finger");
+				document.getElementById("red").setAttribute("class","red");
+				document.getElementById("talk").setAttribute("class","talk");
+				document.getElementById("mac").addEventListener("click",enternum,false);
+			}
+			function enternum()
+			{
+				var input;
+				var password = 19;
+				var i;
+				for(i=0;i<10;i++)
+				{
+				    input = window.prompt("密碼是甚麼呢 猜對才讓你進來 Hint(1~99)");
+					if(input==19){console.log(i);   
+						window.alert("恭喜你猜到了");
+						document.getElementById("gym").setAttribute("class","last");
+						document.getElementById("mac").setAttribute("class","hide");
+						document.getElementById("mac").setAttribute("class","hide");
+						document.getElementById("conv4").setAttribute("class","hide");
+						document.getElementById("conv5").setAttribute("class","hide");
+						document.getElementById("conv6").setAttribute("class","word");
+						document.getElementById("conv7").setAttribute("class","finger");
+						document.getElementById("red").setAttribute("class","red");
+						document.getElementById("talk").setAttribute("class","talk");
+						break;
+					}
+					else if(0<input && input<password)
+						window.alert("再大一點啦");
+					else if(100>input && input>password) //console.log(i);
+						window.alert("你猜的數字太大囉");	
+                    else
+                        window.alert("就說1~99了吼 很故意喔");					
+			    }	
+				if(i==10) {
+					document.getElementById("conv4").setAttribute("class","hide");
+					document.getElementById("conv5").setAttribute("class","hide");
+					document.getElementById("mac").setAttribute("class","hide");
+					document.getElementById("end").setAttribute("class","photo");
+					document.getElementById("but").setAttribute("class","but");
+					document.getElementById("red").setAttribute("class","hide");
+					document.getElementById("talk").setAttribute("class","hide");
+				}
+			}
+			window.addEventListener("load",start,false);
+		</script>
+   </head>
+
+   <body>
+		<div>
+			<img src = "系館/遠.jpg" class = "photo" id = "far" alt = "far">
+			<img src = "系館/大.jpg" class = "hide" id = "mac" alt = "mac">
+			<img src = "系館/近.jpg" class = "hide" id = "near" alt = "near">
+			<img src = "系館/柱子.jpg" class = "hide" id = "cli" alt = "cli">
+			<img src = "系館/gym.jpg" class = "hide" id = "gym" alt = "gym" onclick="javasript:location.href='體育館.html'">
+			<img src = "系館/慌張.jpg" class = "hide" alt = "ner" id = "ner"  alt = "ner">
+			<img src = "系館/生氣.jpg" class = "hide" alt = "mad" id = "mad"alt = "mad">
+			<img src = "系館/思考.jpg" class = "hide" alt = "think" id = "think"  alt = "think">
+			<img src = "系館/對話框.jpg" class = "hide" alt = "talk" id = "talk"alt = "talk">
+			<img src = "系館/對話框2.jpg" class = "hide" alt = "talk2" id = "talk2"alt = "talk2">
+			<img src = "系館/小紅帽.jpg" class = "hide" alt = "red" id = "red"alt = "red">
+			<p class = "hide" id = "conv"alt = "conv">哼那傢伙叫我一定要去資工系館找線索</p>
+			<p class = "hide" id = "conv2"alt = "conv2">建築物本身看起來滿普通的嘛</p>
+			<p class = "hide" id = "conv3"alt = "conv3">走近一點看好了... 欸?系館旁邊的柱子好像有東西</p>
+			<p class = "hide" id = "conv4"alt = "conv4">嘿嘿對我這種高智商而言根本就輕輕鬆鬆啦</p>
+			<p class = "hide" id = "conv5"alt = "conv5">讓我來猜猜到底是多少呢</p>
+			<p class = "hide" id = "conv6"alt = "conv6">那看起來似乎是體育館的柱子呢....</p>
+			<p class = "hide" id = "conv7"alt = "conv8">趕快去瞧瞧</p>
+		    <img src = "系館/尾頁.jpg" class = "hide" alt = "end" id = "end">
+		    <img src = "系館/按鈕.jpg" class = "hide" alt = "but" id = "but" onclick="javasript:location.href='首頁.html'">
+	    </div>	
+	</body>
+</html>
+   
+   

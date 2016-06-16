@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>abandended house</title>
+    <meta charset="utf-8" />
+    <style type="text/css">		
+		body	{background-image: url(back.jpg);
+				 background-repeat: no-repeat;
+				 background-attachment: fixed;
+				 background-position: center;
+				 background-size: cover;}	
+		.basic	{position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:1;}
+		.neel  {cursor:pointer;
+				 position:absolute;
+				 top:300px;
+				 left: 50%;
+				 margin-left:-269.5px;
+				 z-index:2;}
+		.hide 	{visibility:hidden;}
+		.game	{position:absolute;
+				 top:63px;
+				 left: 50%;
+				 margin-left:-272px;
+				 z-index:2;}
+		span 	{font-size: 4em;
+				 font-weight: bold;
+				 font-family: helvetica, arial, sans-serif;
+				 color: blue;}
+        table 	{border-collapse: collapse;
+		line-height:0.78;}      
+        td 		{width: 7.35em;}
+		.word	{position:absolute;
+				 top:410px;
+				 left: 50%;
+				 margin-left:-480px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: black;
+				 font-size:35px;}
+		.red	{
+				 position:absolute;
+				 top:445px;
+				 left: 50%;
+				 margin-left:350px;
+				 z-index:3;}
+		.talk	{
+				 position:absolute;
+				 top:440px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:2;}
+		.talk2	{cursor:pointer;
+				 position:absolute;
+				 top:440px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:2;}
+		.finger	{position:absolute;
+				 top:460px;
+				 left: 50%;
+				 margin-left:-480px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: black;
+				 font-size:35px;}
+
+	</style>
+    <script>
+		var i = 0;
+		var cells;
+		function start(){
+			document.getElementById("house").setAttribute("class","basic");
+			document.getElementById("home").setAttribute("class","hide");
+			document.getElementById("OK").setAttribute("class","hide");
+			document.getElementById("OA").setAttribute("class","hide");
+			document.getElementById("white").setAttribute("class","hide");
+			document.getElementById("neel").setAttribute("class","hide");
+			document.getElementById("word").setAttribute("class","hide");
+			document.getElementById("next").setAttribute("class","hide");
+			document.getElementById("game").setAttribute("class","hide");
+			document.getElementById("ner").setAttribute("class","red");
+			document.getElementById("talk").setAttribute("class","talk");
+			document.getElementById("brabrabra").setAttribute("class","word");
+			document.getElementById("house").addEventListener( "click", howbunbun, false );
+		}
+		function howbunbun(){
+		document.getElementById("ner").setAttribute("class","hide");
+		document.getElementById("talk").setAttribute("class","hide");
+		document.getElementById("brabrabra").setAttribute("class","hide");
+		document.getElementById("house").setAttribute("class","hide");
+		document.getElementById("white").setAttribute("class","basic");
+		document.getElementById("game").setAttribute("class","game");
+		
+		setup();
+		}
+        function setup() 
+		{
+			document.getElementById("game").setAttribute("class","game");
+            // create a 2d array of all the cells
+            cells = new Array(
+				   [document.getElementById("cell00"),
+                    document.getElementById("cell01"),
+                    document.getElementById("cell02"),
+                    document.getElementById("cell03")
+                ], [document.getElementById("cell10"),
+                    document.getElementById("cell11"),
+                    document.getElementById("cell12"),
+                    document.getElementById("cell13")
+                ], [document.getElementById("cell20"),
+                    document.getElementById("cell21"),
+                    document.getElementById("cell22"),
+                    document.getElementById("cell23")
+                ], [document.getElementById("cell30"),
+                    document.getElementById("cell31"),
+                    document.getElementById("cell32"),
+                    document.getElementById("cell33")
+                ]);
+
+            placeNumbers();
+        }
+        function placeNumbers() 
+		{
+           var number = new Array(16);
+		   for(var i = 1; i <= 16; i++)
+				number[i] = i;
+		   var index;
+		   var temp;
+		   for(var i = 1; i <= 16; i++){
+			index = Math.floor(1 + Math.random() * 16);
+			temp = number[i];
+			number[i] = number[ index ];
+			number[index] = temp;
+		   }
+		   var j = 1;
+		   for(var n = 0; n <= 3; n++){
+				for(var m = 0; m <= 3; m++){
+					cells[n][m].innerHTML = "<img src=" + '"廢墟/' +number[j]+ ".jpg" + '"' + ">";
+					if(number[j] == 16)
+						cells[n][m].innerHTML = "";
+					j++;
+					
+				}
+		   }
+		   
+        }
+
+        function doClick(row, col) 
+		{
+            var temp;
+			if(row - 1 >= 0 && cells[row - 1][col].innerHTML == ""){
+				temp = cells[row][col].innerHTML;
+				cells[row][col].innerHTML = cells[row - 1][col].innerHTML;
+				cells[row - 1][col].innerHTML = temp;
+			}else if(row + 1 < 4 && cells[row + 1][col].innerHTML == ""){
+				temp = cells[row][col].innerHTML;
+				cells[row][col].innerHTML = cells[row + 1][col].innerHTML;
+				cells[row + 1][col].innerHTML = temp;
+			}else if(col + 1 < 4 && cells[row][col + 1].innerHTML == ""){
+				temp = cells[row][col].innerHTML;
+				cells[row][col].innerHTML = cells[row][col + 1].innerHTML;
+				cells[row][col + 1].innerHTML = temp;
+			}else if(col - 1 >= 0 && cells[row][col - 1].innerHTML == ""){
+				temp = cells[row][col].innerHTML;
+				cells[row][col].innerHTML = cells[row][col - 1].innerHTML;
+				cells[row][col - 1].innerHTML = temp;
+			}else{
+				return;
+			}
+			checkWin();
+        }
+
+        function checkWin() 
+		{
+			var times = 0;
+			var k = 1;
+			for(var n = 0; n <= 3; n++){
+				for(var m = 0; m <= 3; m++){
+					var key = "<img src=" + '"廢墟/' +k+ ".jpg" + '"' + ">";
+					if(cells[n][m].innerHTML == key) {
+						times++;
+					}	
+					k++;
+				}
+			}
+			if(times == 15){
+				i = 2;
+				window.alert("哇你真的好棒棒 居然拚出來了><");
+				document.getElementById("house").setAttribute("class", "hide");
+				document.getElementById("home").setAttribute("class", "basic");
+				document.getElementById("game").setAttribute("class","hide");
+				document.getElementById("white").setAttribute("class","hide");
+				document.getElementById("red").setAttribute("class","red");
+				document.getElementById("talk").setAttribute("class","talk");
+				document.getElementById("cake").setAttribute("class","word");
+				document.getElementById("home").addEventListener( "click", banbanban, false );
+				
+			}		
+        }
+		function banbanban(){
+		document.getElementById("home").setAttribute("class", "hide");
+		document.getElementById("OA").setAttribute("class", "basic");
+		document.getElementById("red").setAttribute("class","hide");
+		document.getElementById("think").setAttribute("class","red");
+		document.getElementById("cake").setAttribute("class","hide");
+		document.getElementById("word").setAttribute("class","word");
+		document.getElementById("word2").setAttribute("class","finger");
+		document.getElementById("OA").addEventListener( "click", bump, false );
+		}
+		function bump(){
+		document.getElementById("OA").setAttribute("class","hide");
+		document.getElementById("OK").setAttribute("class","basic");
+		document.getElementById("think").setAttribute("class","hide");
+		document.getElementById("word").setAttribute("class","hide");
+		document.getElementById("word2").setAttribute("class","hide");
+		document.getElementById("word").setAttribute("class","hide");
+		document.getElementById("talk").setAttribute("class","hide");
+		document.getElementById("neel").setAttribute("class","neel");
+		document.getElementById("neel").addEventListener( "click", go, false );
+		
+		}
+		function go(){
+		document.getElementById("OK").setAttribute("class","basic");
+		document.getElementById("neel").setAttribute("class","hide");
+		document.getElementById("red").setAttribute("class","red");
+		document.getElementById("talk2").setAttribute("class","talk2");
+		document.getElementById("next").setAttribute("class","word");
+		}
+        function restart() 
+		{
+			setup();
+		}
+
+        function gotoLast2Steps() 
+		{
+			var number = new Array(16);
+			for(var i = 1; i <= 16; i++)
+				number[i] = i;
+			var j = 1;
+		    for(var n = 0; n <= 3; n++){
+				for(var m = 0; m <= 3; m++){
+					cells[n][m].innerHTML = "<img src=" + '"廢墟/' +number[j]+ ".jpg" + '"' + ">";
+					if(number[j] == 16)
+						cells[n][m].innerHTML = "";
+					j++;	
+				}
+		    }
+			var index;
+			var temp;
+			index = Math.floor(Math.random() * 2);
+			if(index == 0){
+				temp = cells[2][3].innerHTML;
+				cells[2][3].innerHTML = cells[3][3].innerHTML;
+				cells[3][3].innerHTML = temp;
+				index = Math.floor(Math.random() * 2);
+				if(index == 0){
+					temp = cells[1][3].innerHTML;
+					cells[1][3].innerHTML = cells[2][3].innerHTML;
+					cells[2][3].innerHTML = temp;
+				}else{
+					temp = cells[2][2].innerHTML;
+					cells[2][2].innerHTML = cells[2][3].innerHTML;
+					cells[2][3].innerHTML = temp;
+				}	
+			}else{
+				temp = cells[3][2].innerHTML;
+				cells[3][2].innerHTML = cells[3][3].innerHTML;
+				cells[3][3].innerHTML = temp;
+				index = Math.floor(Math.random() * 2);
+				if(index == 0){
+					temp = cells[2][2].innerHTML;
+					cells[2][2].innerHTML = cells[3][2].innerHTML;
+					cells[3][2].innerHTML = temp;
+				}else{
+					temp = cells[3][1].innerHTML;
+					cells[3][1].innerHTML = cells[3][2].innerHTML;
+					cells[3][2].innerHTML = temp;
+				}
+			}
+		}
+		
+		window.addEventListener( "load", start, false );
+
+    </script>
+</head>
+
+<body>
+	<div>
+		<img src = "廢墟/廢墟2.jpg" class = "basic" alt = "house" id = "house">
+		<img src = "廢墟/廢墟2 - 複製.jpg" class = "basic" alt = "home" id = "home">
+		<img src = "廢墟/55.jpg" class = "basic" alt = "OK" id = "OK">
+		<img src = "廢墟/58.jpg" class = "basic" alt = "OA" id = "OA">
+		<img src = "廢墟/廢墟刷白2.jpg" class = "hide" alt = "white" id = "white">
+		<img src = "廢墟/neel.gif" class = "hide" alt = "neel" id = "neel" >
+		<img src = "廢墟/生氣.jpg" class = "hide" alt = "mad" id = "mad" >
+		<img src = "廢墟/思考.jpg" class = "hide" alt = "think" id = "think" >
+		<img src = "廢墟/小紅帽.jpg" class = "hide" alt = "red" id = "red">
+		<img src = "廢墟/對話框.jpg" class = "hide" alt = "talk" id = "talk">
+		<img src = "廢墟/對話框2.jpg" class = "hide" alt = "talk2" id = "talk2" onclick="javasript:location.href='女二.html'">
+		<img src = "廢墟/慌張.jpg" class = "hide" alt = "ner" id = "ner" >
+		<p id="brabrabra" class="hide">呼~終於到廢墟啦 咦背景怎麼扭曲了</p>
+		<p id="cake" class="hide">哼拼拼圖算什麼 對我來說根本一塊蛋糕</p>
+		<p id="word" class="hide">對了!!!如果要進去宿舍得先找到指紋才行</p>
+		<p id="word2" class="hide">我來找找吧~</p>
+		<p id="next" class="hide">太好了找到啦!!!快去宿舍找九陰真經吧!!!!</p>
+	</div>
+	
+	<table id = "game" class = "hide">
+        <tr>
+            <td onclick="doClick( 0, 0 )"><span id="cell00"><img src = "廢墟/1.jpg"></td>
+            <td onclick="doClick( 0, 1 )"><span id="cell01"><img src = "廢墟/2.jpg"></td>
+            <td onclick="doClick( 0, 2 )"><span id="cell02"><img src = "廢墟/3.jpg"></td>
+            <td onclick="doClick( 0, 3 )"><span id="cell03"><img src = "廢墟/4.jpg"></td>
+        </tr>
+        <tr>
+            <td onclick="doClick( 1, 0 )"><span id="cell10"><img src = "廢墟/5.jpg"></td>
+            <td onclick="doClick( 1, 1 )"><span id="cell11"><img src = "廢墟/6.jpg"></td>
+            <td onclick="doClick( 1, 2 )"><span id="cell12"><img src = "廢墟/7.jpg"></td>
+            <td onclick="doClick( 1, 3 )"><span id="cell13"><img src = "廢墟/8.jpg"></td>
+        </tr>
+        <tr>
+            <td onclick="doClick( 2, 0 )"><span id="cell20"><img src = "廢墟/9.jpg"></td>
+            <td onclick="doClick( 2, 1 )"><span id="cell21"><img src = "廢墟/10.jpg"></td>
+            <td onclick="doClick( 2, 2 )"><span id="cell22"><img src = "廢墟/11.jpg"></td>
+            <td onclick="doClick( 2, 3 )"><span id="cell23"><img src = "廢墟/12.jpg"></td>
+        </tr>
+        <tr>
+            <td onclick="doClick( 3, 0 )"><span id="cell30"><img src = "廢墟/13.jpg"></td>
+            <td onclick="doClick( 3, 1 )"><span id="cell31"><img src = "廢墟/14.jpg"></td>
+            <td onclick="doClick( 3, 2 )"><span id="cell32"><img src = "廢墟/15.jpg"></td>
+            <td onclick="doClick( 3, 3 )"><span id="cell33"><img src = ""></td>
+        </tr>
+        <td align="center" colspan="2"><input type="button" value="Restart game" onclick="restart()" id="restart" /></td>
+        <td align="center" colspan="2"><input type="button" value="Go to last 2 steps" onclick="gotoLast2Steps()" id="laststep" /></td>
+        </tr>
+    </table>
+	
+</body>
+
+</html>

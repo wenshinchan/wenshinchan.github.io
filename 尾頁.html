@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>last page</title>
+    <meta charset="utf-8" />
+    <style type="text/css">		 
+		.basic	{position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:1;}
+		.but	{cursor:pointer;
+				 position:absolute;
+				 top:460px;
+				 left: 50%;
+				 margin-left:268px;
+				 z-index:2;}
+	</style>
+    <script>
+			function start(){
+			document.getElementById("end").setAttribute("class","basic");
+			document.getElementById("but").setAttribute("class","but");
+		}
+		window.addEventListener( "load", start, false );
+
+    </script>
+</head>
+
+<body>
+	<div>
+		<img src = "尾頁.jpg" class = "basic" alt = "end" id = "end">
+		<img src = "按鈕.jpg" class = "basic" alt = "but" id = "but" onclick="javasript:location.href='首頁.html'">
+	</div>
+	
+</body>
+
+</html>

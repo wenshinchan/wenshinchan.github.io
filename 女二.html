@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>dorm</title>
+<meta charset="utf-8" />
+<style type="text/css">
+body	{background-image: url(back.jpg);
+				 background-repeat: no-repeat;
+				 background-attachment: fixed;
+				 background-position: center;
+				 background-size: cover;}
+.basic	{position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:1;}
+.but	{cursor:pointer;
+				 position:absolute;
+				 top:460px;
+				 left: 50%;
+				 margin-left:268px;
+				 z-index:2;}
+.hide 	{visibility:hidden;
+				position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;}
+.word	{position:absolute;
+				 top:410px;
+				 left: 50%;
+				 margin-left:-480px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: black;
+				 font-size:35px;}
+.red	{
+				 position:absolute;
+				 top:445px;
+				 left: 50%;
+				 margin-left:350px;
+				 z-index:2;}
+.talk	{cursor:pointer;
+				 position:absolute;
+				 top:440px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:2;}
+.ban	{cursor:pointer;
+				 position:absolute;
+				 top:272px;
+				 left: 50%;
+				 margin-left:93px;
+				 z-index:2;}
+.finger	{position:absolute;
+				 top:460px;
+				 left: 50%;
+				 margin-left:-480px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: black;
+				 font-size:35px;}
+.lock	{cursor:pointer;
+				 position:absolute;
+				 top:165px;
+				 left: 50%;
+				 margin-left:-185px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: red;
+				 font-size:50px;}
+.pass	{cursor:pointer;
+				 position:absolute;
+				 top:165px;
+				 left: 50%;
+				 margin-left:-100px;
+				 z-index:3;
+				 font-family:微軟正黑體;
+				 color: green;
+				 font-size:50px;}
+.boo	{cursor:pointer;
+				 position:absolute;
+				 top:342px;
+				 left: 50%;
+				 margin-left:91px;
+				 z-index:1;}
+.O		{cursor:pointer;
+			position:absolute;
+				 top:337px;
+				 left: 50%;
+				 margin-left:-200px;
+				 z-index:2;}
+.X		{cursor:pointer;
+			position:absolute;
+				 top:337px;
+				 left: 50%;
+				 margin-left:92px;
+				 z-index:2;}
+.gameO	{position:absolute;
+				 top:120px;
+				 left: 50%;
+				 font-family:微軟正黑體;
+				 font-size:50px;
+				 margin-left:-250px;
+				 z-index:2;}
+.gameX	{position:absolute;
+				 top:320px;
+				 left: 50%;
+				 font-family:微軟正黑體;
+				 font-size:50px;
+				 margin-left:-250px;
+				 z-index:2;}
+.gamestO {cursor:pointer;
+			position:absolute;
+			top:170px;
+			left: 50%;
+			margin-left:100px;
+			z-index:2;}
+.gamestX {cursor:pointer;
+			position:absolute;
+			top:370px;
+			left: 50%;
+			margin-left:100px;
+			z-index:2;}
+</style>
+    <script>
+	function start(){
+			document.getElementById("dorm").setAttribute("class","basic");
+			document.getElementById("talk").setAttribute("class","hide");
+			document.getElementById("red").setAttribute("class","hide");
+			document.getElementById("ner").setAttribute("class","hide");
+			document.getElementById("look").setAttribute("class","hide");
+			document.getElementById("ele").setAttribute("class","hide");
+			document.getElementById("mac").setAttribute("class","hide");
+			document.getElementById("go").setAttribute("class","hide");
+			document.getElementById("five").setAttribute("class","hide");
+			document.getElementById("room").setAttribute("class","hide");
+			document.getElementById("book").setAttribute("class","hide");
+			document.getElementById("word").setAttribute("class","hide");
+			document.getElementById("dorm").addEventListener( "click", howbunbun, false );
+			
+		}
+		function howbunbun(){
+			document.getElementById("dorm").setAttribute("class","hide");
+			document.getElementById("look").setAttribute("class","basic");
+			document.getElementById("look").addEventListener( "click", red, false );
+		}
+		function red(){
+			document.getElementById("look").setAttribute("class","basic");
+			document.getElementById("talk").setAttribute("class","talk");
+			document.getElementById("red").setAttribute("class","red");
+			document.getElementById("word").setAttribute("class","word");
+			document.getElementById("talk").addEventListener( "click", gotodorm, false );
+			}
+		function gotodorm(){
+			document.getElementById("ban").setAttribute("class","ban");
+			document.getElementById("ele").setAttribute("class","basic");
+			document.getElementById("look").setAttribute("class","hide");
+			document.getElementById("talk").setAttribute("class","talk");
+			document.getElementById("red").setAttribute("class","red");
+			document.getElementById("word").setAttribute("class","hide");
+			document.getElementById("godorm").setAttribute("class","word");
+			document.getElementById("upup").setAttribute("class","finger");
+			document.getElementById("ban").addEventListener( "click", theneel, false );
+			}
+		function theneel(){
+			document.getElementById("ban").setAttribute("class","hide");
+			document.getElementById("ele").setAttribute("class","hide");
+			document.getElementById("look").setAttribute("class","hide");
+			document.getElementById("talk").setAttribute("class","hide");
+			document.getElementById("red").setAttribute("class","hide");
+			document.getElementById("word").setAttribute("class","hide");
+			document.getElementById("godorm").setAttribute("class","hide");
+			document.getElementById("upup").setAttribute("class","hide");
+			document.getElementById("mac").setAttribute("class","basic");
+			document.getElementById("mac").addEventListener( "click", gogo, false );
+			}
+		function gogo(){
+			document.getElementById("mac").setAttribute("class","basic");
+			document.getElementById("lock").setAttribute("class","lock");
+			document.getElementById("lock").addEventListener( "click", gogogo, false );
+		}
+		function gogogo(){
+			document.getElementById("mac").setAttribute("class","basic");
+			document.getElementById("lock").setAttribute("class","lock");
+			document.getElementById("talk1").setAttribute("class","talk");
+			document.getElementById("red").setAttribute("class","hide");
+			document.getElementById("mad").setAttribute("class","red");
+			document.getElementById("f").setAttribute("class","word");
+			document.getElementById("godorm").setAttribute("class","hide");
+			document.getElementById("finger").setAttribute("class","finger");
+			document.getElementById("talk1").addEventListener( "click", nextone, false );
+		}
+		function nextone(){
+			document.getElementById("mac").setAttribute("class","hide");
+			document.getElementById("talk1").setAttribute("class","hide");
+			document.getElementById("lock").setAttribute("class","hide");
+			document.getElementById("talk2").setAttribute("class","talk");
+			document.getElementById("mad").setAttribute("class","hide");
+			document.getElementById("red").setAttribute("class","red");
+			document.getElementById("f").setAttribute("class","hide");
+			document.getElementById("finger").setAttribute("class","hide");
+			document.getElementById("go").setAttribute("class","basic");
+			document.getElementById("pass").setAttribute("class","pass");
+			document.getElementById("yokada").setAttribute("class","word");
+			document.getElementById("pass").addEventListener( "click", goup, false );
+		
+		}
+		function goup(){
+			document.getElementById("pass").setAttribute("class","hide");
+			document.getElementById("yokada").setAttribute("class","hide");
+			document.getElementById("black").setAttribute("class","basic");
+			document.getElementById("ban").setAttribute("class","hide");
+			document.getElementById("ele").setAttribute("class","hide");
+			document.getElementById("look").setAttribute("class","hide");
+			document.getElementById("what").setAttribute("class","word");
+			document.getElementById("talk2").setAttribute("class","talk");
+			document.getElementById("red").setAttribute("class","hide");
+			document.getElementById("ner").setAttribute("class","red");
+			document.getElementById("word").setAttribute("class","hide");
+			document.getElementById("godorm").setAttribute("class","hide");
+			elevator = document.getElementById( "elevator" );
+			elevator.play();
+			document.getElementById("black").addEventListener( "click",fivefloor, false );
+		}
+		
+		
+		function fivefloor(){
+			document.getElementById("what").setAttribute("class","hide");
+			document.getElementById("black").setAttribute("class","hide");
+			document.getElementById("five").setAttribute("class","basic");
+			document.getElementById("talk2").setAttribute("class","talk");
+			document.getElementById("ner").setAttribute("class","hide");
+			document.getElementById("red").setAttribute("class","hide");
+			document.getElementById("mad").setAttribute("class","hide");
+			document.getElementById("think").setAttribute("class","red");
+			document.getElementById("num").setAttribute("class","word");
+			document.getElementById("five").addEventListener( "click",goroom, false );
+		}
+		function goroom(){
+			document.getElementById("room").setAttribute("class","basic");
+			document.getElementById("what").setAttribute("class","hide");
+			document.getElementById("black").setAttribute("class","hide");
+			document.getElementById("five").setAttribute("class","hide");
+			document.getElementById("talk2").setAttribute("class","talk");
+			document.getElementById("ner").setAttribute("class","hide");
+			document.getElementById("red").setAttribute("class","red");
+			document.getElementById("mad").setAttribute("class","hide");
+			document.getElementById("think").setAttribute("class","hide");
+			document.getElementById("num").setAttribute("class","hide");
+			document.getElementById("goin").setAttribute("class","word");
+			document.getElementById("room").addEventListener( "click",A, false );
+		}
+		function A(){
+			document.getElementById("room").setAttribute("class","hide");
+			document.getElementById("talk2").setAttribute("class","hide");
+			document.getElementById("red").setAttribute("class","hide");
+			document.getElementById("goin").setAttribute("class","hide");
+			document.getElementById("shiro").setAttribute("class","basic");
+			door = document.getElementById( "door" );
+			door.play();
+			document.getElementById("shiro").addEventListener( "click",alsoA, false );
+		}
+		function alsoA(){
+			document.getElementById("sh").setAttribute("class","basic");
+			document.getElementById("shiro").setAttribute("class","hide");
+			document.getElementById("gosh").setAttribute("class","word");
+			document.getElementById("kuso").setAttribute("class","finger");
+			document.getElementById("talk2").setAttribute("class","talk");
+			document.getElementById("think").setAttribute("class","red");
+			document.getElementById("sh").addEventListener( "click",soA, false );
+		}
+		function soA(){
+			document.getElementById("sh").setAttribute("class","basic");
+			document.getElementById("boo").setAttribute("class","boo");
+			document.getElementById("gosh").setAttribute("class","hide");
+			document.getElementById("kuso").setAttribute("class","hide");
+			document.getElementById("talk2").setAttribute("class","hide");
+			document.getElementById("think").setAttribute("class","hide");
+			document.getElementById("boo").addEventListener( "click",getbook, false );
+		}
+		function getbook(){
+			document.getElementById("book").setAttribute("class","basic");
+			document.getElementById("sh").setAttribute("class","hide");
+			document.getElementById("boo").setAttribute("class","hide");
+			doraemon = document.getElementById( "doraemon" );
+			doraemon.play();
+			document.getElementById("book").addEventListener( "click",open, false );
+		}
+		function open(){
+			document.getElementById("ga").setAttribute("class","basic");
+			document.getElementById("O").setAttribute("class","O");
+			document.getElementById("X").setAttribute("class","X");
+			document.getElementById("O").addEventListener( "click",game1, false );
+			document.getElementById("X").addEventListener( "click",gameover, false );
+		}
+		function gameover(){
+		document.getElementById("O").setAttribute("class","hide");
+			document.getElementById("X").setAttribute("class","hide");
+			document.getElementById("1").setAttribute("class","hide");
+			document.getElementById("2").setAttribute("class","hide");
+			document.getElementById("3").setAttribute("class","hide");
+			document.getElementById("4").setAttribute("class","hide");
+			document.getElementById("5").setAttribute("class","hide");
+			document.getElementById("6").setAttribute("class","hide");
+			document.getElementById("7").setAttribute("class","hide");
+			document.getElementById("8").setAttribute("class","hide");
+			document.getElementById("O1").setAttribute("class","hide");
+			document.getElementById("X1").setAttribute("class","hide");
+			document.getElementById("O2").setAttribute("class","hide");
+			document.getElementById("X2").setAttribute("class","hide");
+			document.getElementById("O3").setAttribute("class","hide");
+			document.getElementById("X3").setAttribute("class","hide");
+			document.getElementById("O4").setAttribute("class","hide");
+			document.getElementById("X4").setAttribute("class","hide");
+			document.getElementById("end").setAttribute("class","basic");
+			document.getElementById("but").setAttribute("class","but");
+		}
+		function game1(){
+			document.getElementById("copy").setAttribute("class","basic");
+			document.getElementById("ga").setAttribute("class","hide");
+			document.getElementById("O").setAttribute("class","hide");
+			document.getElementById("X").setAttribute("class","hide");
+			document.getElementById("1").setAttribute("class","gameO");
+			document.getElementById("2").setAttribute("class","gameX");
+			document.getElementById("3").setAttribute("class","hide");
+			document.getElementById("4").setAttribute("class","hide");
+			document.getElementById("5").setAttribute("class","hide");
+			document.getElementById("6").setAttribute("class","hide");
+			document.getElementById("7").setAttribute("class","hide");
+			document.getElementById("8").setAttribute("class","hide");
+			document.getElementById("O1").setAttribute("class","gamestO");
+			document.getElementById("X1").setAttribute("class","gamestX");
+			document.getElementById("O1").addEventListener( "click",game2, false );
+			document.getElementById("X1").addEventListener( "click",gameover, false );
+		}
+		function game2(){
+			document.getElementById("copy").setAttribute("class","basic");
+			document.getElementById("1").setAttribute("class","hide");
+			document.getElementById("2").setAttribute("class","hide");
+			document.getElementById("O1").setAttribute("class","hide");
+			document.getElementById("X1").setAttribute("class","hide");
+			document.getElementById("3").setAttribute("class","gameO");
+			document.getElementById("4").setAttribute("class","gameX");
+			document.getElementById("O2").setAttribute("class","gamestO");
+			document.getElementById("X2").setAttribute("class","gamestX");
+			document.getElementById("O2").addEventListener( "click",gameover, false );
+			document.getElementById("X2").addEventListener( "click",game3, false );
+			}
+		function game3(){
+			document.getElementById("copy").setAttribute("class","basic");
+			document.getElementById("3").setAttribute("class","hide");
+			document.getElementById("4").setAttribute("class","hide");
+			document.getElementById("O2").setAttribute("class","hide");
+			document.getElementById("X2").setAttribute("class","hide");
+			document.getElementById("5").setAttribute("class","gameO");
+			document.getElementById("6").setAttribute("class","gameX");
+			document.getElementById("O3").setAttribute("class","gamestO");
+			document.getElementById("X3").setAttribute("class","gamestX");
+			document.getElementById("O3").addEventListener( "click",game4, false );
+			document.getElementById("X3").addEventListener( "click",gameover, false );
+		}
+		function game4(){
+			document.getElementById("copy").setAttribute("class","basic");
+			document.getElementById("5").setAttribute("class","hide");
+			document.getElementById("6").setAttribute("class","hide");
+			document.getElementById("O3").setAttribute("class","hide");
+			document.getElementById("X3").setAttribute("class","hide");
+			document.getElementById("7").setAttribute("class","gameO");
+			document.getElementById("8").setAttribute("class","gameX");
+			document.getElementById("O4").setAttribute("class","gamestO");
+			document.getElementById("X4").setAttribute("class","gamestX");
+			document.getElementById("X4").addEventListener( "click",gameover, false );
+		}
+    window.addEventListener( "load", start, false );
+	
+	</script>
+</head>
+
+<body >
+<audio id = "doraemon" preload = "auto">
+         <source src = "女二/doraemon.mp3" type = "audio/mpeg">
+    </audio>
+	<audio id = "elevator" preload = "auto">
+         <source src = "女二/電梯音效.mp3" type = "audio/mpeg">
+    </audio>
+	<audio id = "door" preload = "auto">
+         <source src = "女二/開門聲.mp3" type = "audio/mpeg">
+    </audio>
+    <div>
+		<img src = "女二/女二.jpg" class = "basic" alt = "dorm" id = "dorm">
+		<img src = "女二/對話框.jpg" class = "hide" alt = "talk" id = "talk">
+		<img src = "女二/對話框2.jpg" class = "hide" alt = "talk2" id = "talk2">
+		<img src = "女二/對話框 - 複製.jpg" class = "hide" alt = "talk1" id = "talk1">
+		<img src = "女二/小紅帽.jpg" class = "hide" alt = "red" id = "red">
+		<img src = "女二/女二向上看.jpg" class = "hide" alt = "look" id = "look">
+		<img src = "女二/電梯模糊.jpg" class = "hide" alt = "ele" id = "ele">
+		<img src = "女二/小指紋.jpg" class = "hide" alt = "ban" id = "ban">
+		<img src = "女二/指紋機拷貝.jpg" class = "hide" alt = "mac" id = "mac">
+		<img src = "女二/指紋GO.jpg" class = "hide" alt = "go" id = "go">
+		<img src = "女二/五樓.jpg" class = "hide" alt = "five" id = "five" >
+		<img src = "女二/宿舍.jpg" class = "hide" alt = "room" id = "room" >
+		<img src = "女二/九陰真經拷貝.jpg" class = "hide" alt = "book" id = "book" >
+		<img src = "女二/九陰真經.jpg" class = "hide" alt = "black" id = "black" >
+		<img src = "女二/九陰真經打開.jpg" class = "hide" alt = "open" id = "open" >
+		<img src = "女二/慌張.jpg" class = "hide" alt = "ner" id = "ner" >
+		<img src = "女二/生氣.jpg" class = "hide" alt = "mad" id = "mad" >
+		<img src = "女二/思考.jpg" class = "hide" alt = "think" id = "think" >
+		<img src = "女二/白.jpg" class = "hide" alt = "shiro" id = "shiro" >
+		<img src = "女二/書架.jpg" class = "hide" alt = "sh" id = "sh" >
+		<img src = "女二/書.jpg" class = "hide" alt = "boo" id = "boo" >
+		<img src = "女二/遊戲.jpg" class = "hide" alt = "ga" id = "ga" >
+		<img src = "女二/O.jpg" class = "hide" alt = "O" id = "O" >
+		<img src = "女二/O - 1.jpg" class = "hide" alt = "O1" id = "O1" >
+		<img src = "女二/O - 2.jpg" class = "hide" alt = "O2" id = "O2" >
+		<img src = "女二/O - 3.jpg" class = "hide" alt = "O3" id = "O3" >
+		<img src = "女二/O - 4.jpg" class = "hide" alt = "O4" id = "O4" onclick="javasript:location.href='結局頁.html'" >
+		<img src = "女二/X.jpg" class = "hide" alt = "X" id = "X" >
+		<img src = "女二/O - 5.jpg" class = "hide" alt = "X1" id = "X1" >
+		<img src = "女二/O - 6.jpg" class = "hide" alt = "X2" id = "X2" >
+		<img src = "女二/O - 7.jpg" class = "hide" alt = "X3" id = "X3" >
+		<img src = "女二/O - 8.jpg" class = "hide" alt = "X4" id = "X4" >
+		<img src = "女二/九陰真經打開拷貝.jpg" class = "hide" alt = "copy" id = "copy" >
+		<img src = "尾頁.jpg" class = "hide" alt = "end" id = "end">
+		<img src = "按鈕.jpg" class = "hide" alt = "but" id = "but" onclick="javasript:location.href='首頁.html'">
+		<p id="word" class="hide">這就是女二宿舍阿</p>
+		<p id="godorm" class="hide">提示說是在五樓不用爬樓梯真是太好了</p>
+		<p id="upup" class="hide">是按指紋機上去嗎...?</p>
+		<p id="f" class="hide">居然鎖住了!!!</p>
+		<p id="finger" class="hide">欸搞不好剛剛找到的指紋好像可以派上用場</p>
+		<p id="lock" class="hide">LOCKED</p>
+		<p id="pass" class="hide">PASS</p>
+		<p id="yokada" class="hide">太好了通過啦</p>
+		<p id="what" class="hide">欸欸欸欸欸!發生什麼事了QAQ</p>
+		<p id="num" class="hide">恩...521...521....</p>
+		<p id="goin" class="hide">嘿嘿~進去拿九陰真經吧!!!!</p>
+		<p id="gosh" class="hide">也太亂了吧!!!!</p>
+		<p id="kuso" class="hide">可惡也只好慢慢找了</p>
+		<p id="1" class="hide">指桑罵槐</p>
+		<p id="2" class="hide">指桑罵塊</p>
+		<p id="3" class="hide">溍渭分明</p>
+		<p id="4" class="hide">涇渭分明</p>
+		<p id="5" class="hide">敝帚自珍</p>
+		<p id="6" class="hide">敝掃自珍</p>
+		<p id="7" class="hide">明日黄花</p>
+		<p id="8" class="hide">明日紅花</p>
+		<p id="next" class="hide" onclick="javasript:location.href='女二.html'">太好了你找到了!!!快去宿舍找九陰真經吧!!!!</p>
+	</div>
+
+</html>

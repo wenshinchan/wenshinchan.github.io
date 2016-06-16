@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>the end</title>
+    <meta charset="utf-8" />
+    <style type="text/css">		 
+		.basic	{position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:1;}
+		body	{background-image: url(back.jpg);
+				 background-repeat: no-repeat;
+				 background-attachment: fixed;
+				 background-position: center;
+				 background-size: cover;}	
+		.but	{cursor:pointer;
+				 position:absolute;
+				 top:520px;
+				 left: 50%;
+				 margin-left:140px;
+				 z-index:2;}
+	</style>
+    <script>
+			function start(){
+			document.getElementById("end").setAttribute("class","basic");
+			document.getElementById("but").setAttribute("class","but");
+		}
+		window.addEventListener( "load", start, false );
+
+    </script>
+</head>
+
+<body>
+	<div>
+		<img src = "結局頁.jpg" class = "basic" alt = "end" id = "end">
+		<img src = "按鈕2.jpg" class = "basic" alt = "but" id = "but" onclick="javasript:location.href='首頁.html'">
+	</div>
+	
+</body>
+
+</html>

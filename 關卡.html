@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>choose</title>
+    <meta charset="utf-8" />
+    <style type="text/css">		
+		body	{background-image: url(back.jpg);
+				 background-repeat: no-repeat;
+				 background-attachment: fixed;
+				 background-position: center;
+				 background-size: cover;}
+		.basic	{position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:1;}
+		.b1	{cursor:pointer;
+				 position:absolute;
+				 top:170px;
+				 left: 50%;
+				 margin-left:-300px;
+				 z-index:2;}
+		.b2	{cursor:pointer;
+				 position:absolute;
+				 top:170px;
+				 left: 50%;
+				 margin-left:100px;
+				 z-index:2;}
+		.b3	{cursor:pointer;
+				 position:absolute;
+				 top:370px;
+				 left: 50%;
+				 margin-left:-300px;
+				 z-index:2;}
+		.b4	{cursor:pointer;
+				 position:absolute;
+				 top:370px;
+				 left: 50%;
+				 margin-left:100px;
+				 z-index:2;}
+	</style>
+    <script>
+			function start(){
+			document.getElementById("story").setAttribute("class","basic");
+			document.getElementById("1").setAttribute("class","b1");
+			document.getElementById("2").setAttribute("class","b2");
+			document.getElementById("3").setAttribute("class","b3");
+			document.getElementById("4").setAttribute("class","b4");
+		}
+		window.addEventListener( "load", start, false );
+
+    </script>
+</head>
+
+<body>
+	<div>
+		<img src = "關卡/關卡.jpg" class = "basic" alt = "story" id = "story">
+		<img src = "關卡/1.jpg" class = "hide" alt = "1" id = "1" onclick="javasript:location.href='系館.html'">
+		<img src = "關卡/2.jpg" class = "hide" alt = "2" id = "2" onclick="javasript:location.href='體育館.html'">
+		<img src = "關卡/3.jpg" class = "hide" alt = "3" id = "3" onclick="javasript:location.href='廢墟.html'">
+		<img src = "關卡/4.jpg" class = "hide" alt = "4" id = "4" onclick="javasript:location.href='女二.html'">
+	</div>
+	
+</body>
+
+</html>

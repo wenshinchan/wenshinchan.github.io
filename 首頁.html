@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>first page</title>
+    <meta charset="utf-8" />
+    <style type="text/css">		
+body	{background-image: url(back.jpg);
+				 background-repeat: no-repeat;
+				 background-attachment: fixed;
+				 background-position: center;
+				 background-size: cover;}	
+		.basic	{position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:1;}
+		.start	{cursor:pointer;
+				 position:absolute;
+				 top:283px;
+				 left: 50%;
+				 margin-left:-470px;
+				 z-index:2;}
+		.hide	{visibility:hidden;
+				position:absolute;
+				 top:20px;
+				 left: 50%;
+				 margin-left:-500px;}
+		.choose	{cursor:pointer;
+				 position:absolute;
+				 top:343px;
+				 left: 50%;
+				 margin-left:-470px;
+				 z-index:2;}
+		.story	{cursor:pointer;
+				 position:absolute;
+				 top:403px;
+				 left: 50%;
+				 margin-left:-470px;
+				 z-index:2;}
+		.about	{cursor:pointer;
+				 position:absolute;
+				 top:463px;
+				 left: 50%;
+				 margin-left:-470px;
+				 z-index:2;}
+		.chat	{cursor:pointer;
+				 position:absolute;
+				 top:523px;
+				 left: 50%;
+				 margin-left:-470px;
+				 z-index:2;}
+		
+	</style>
+    <script>
+			function start(){
+			document.getElementById("go").setAttribute("class","basic");
+			document.getElementById("start").setAttribute("class","start");
+			document.getElementById("choose").setAttribute("class","choose");
+			document.getElementById("story").setAttribute("class","story");
+			document.getElementById("about").setAttribute("class","about");
+			document.getElementById("chat").setAttribute("class","chat");
+		}
+		window.addEventListener( "load", start, false );
+
+    </script>
+</head>
+
+<body>
+	<div>
+		<img src = "首頁/首頁.jpg" class = "basic" alt = "go" id = "go">
+		<img src = "首頁/開始.jpg" class = "hide" alt = "start" id = "start" onclick="javasript:location.href='系館.html'">
+		<img src = "首頁/關卡.jpg" class = "hide" alt = "choose" id = "choose" onclick="javasript:location.href='關卡.html'">
+		<img src = "首頁/故事.jpg" class = "hide" alt = "story" id = "story" onclick="javasript:location.href='故事頁.html'">
+		<a href="00357001_鄭宇婷 00357045_陳文欣.pptx" download="w3logo">
+		<img src = "首頁/關於.jpg" class = "hide" alt = "about" id = "about">
+		</a>
+		<a href = "https://www.facebook.com/ntoucsno.1/?fref=ts">
+		<img src = "首頁/討論.jpg" class = "hide" alt = "chat" id = "chat">
+		</a>
+	</div>
+	
+</body>
+
+</html>
