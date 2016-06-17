@@ -38,7 +38,8 @@
 				 left: 50%;
 				 margin-left:350px;
 				 z-index:3;}
-		.start 	{position:absolute;
+		.start 	{cursor:pointer;
+				 position:absolute;
 				 top:243px;
 				 left: 50%;
 				 margin-left:207px;
@@ -64,19 +65,22 @@
 				 left: 50%;
 				 margin-left:-500px;
 				}	
-        .lightning	{position:absolute;
+        .lightning	{cursor:pointer;
+		             position:absolute;
 					 top:368px;
 					 left: 100.4%;
 					 margin-left:-500px;
 					 z-index:2;
 					}	
         .cloud	{position:absolute;
+				cursor:pointer;
 				 top:389px;
 				 left: 77.3%;
 				 margin-left:-500px;
 				 z-index:2;
 		        }	
         .sun  {position:absolute;
+				cursor:pointer;
 			   top:366px;
 			   left: 56.9%;
 			   margin-left:-500px;
@@ -89,6 +93,7 @@
 				 margin-left:268px;
 				 z-index:2;}	
         .last    {position:absolute;
+				cursor:pointer;
 				 top:20px;
 				 left:70%;
 				 margin-left:-500px;
@@ -136,7 +141,9 @@
 			}
 		function question2()
 			{
-			    document.getElementById("2").setAttribute("class","photo");
+			    yes = document.getElementById( "yes" );
+			yes.play();
+				document.getElementById("2").setAttribute("class","photo");
 				document.getElementById("lightning1").setAttribute("class","lightning");
 				document.getElementById("cloud1").setAttribute("class","cloud");
 				document.getElementById("sun1").setAttribute("class","sun");
@@ -146,7 +153,9 @@
 			}		
 		function question3()
 			{
-			    document.getElementById("3").setAttribute("class","photo");
+			    yes = document.getElementById( "yes" );
+			yes.play();
+				document.getElementById("3").setAttribute("class","photo");
 				document.getElementById("lightning2").setAttribute("class","lightning");
 				document.getElementById("cloud2").setAttribute("class","cloud");
 				document.getElementById("sun2").setAttribute("class","sun");
@@ -156,7 +165,9 @@
 			}		
 		function question4()
 			{
-			    document.getElementById("4").setAttribute("class","photo");
+			    yes = document.getElementById( "yes" );
+			yes.play();
+				document.getElementById("4").setAttribute("class","photo");
 				document.getElementById("lightning3").setAttribute("class","lightning");
 				document.getElementById("cloud3").setAttribute("class","cloud");
 				document.getElementById("sun3").setAttribute("class","sun");
@@ -166,7 +177,9 @@
 			}	
 		function question5()
 			{
-			    document.getElementById("5").setAttribute("class","photo");
+			    yes = document.getElementById( "yes" );
+			yes.play();
+				document.getElementById("5").setAttribute("class","photo");
 				document.getElementById("lightning4").setAttribute("class","lightning");
 				document.getElementById("cloud4").setAttribute("class","cloud");
 				document.getElementById("sun4").setAttribute("class","sun");
@@ -209,6 +222,8 @@
 		}
 		function gameover()
 		{
+			fal = document.getElementById( "fal" );
+			fal.play();
 			document.getElementById("end").setAttribute("class","photo");
 			document.getElementById("but").setAttribute("class","but");
 			document.getElementById("lightning").setAttribute("class","hide");
@@ -233,6 +248,12 @@
 	</head>
 
     <body>
+		<audio id = "yes" preload = "auto">
+         <source src = "體育館/答對音效.mp3" type = "audio/mpeg">
+    </audio>
+	<audio id = "fal" preload = "auto">
+         <source src = "體育館/FALSE.mp3" type = "audio/mpeg">
+    </audio>
 		<div>
 			<img src = "體育館/IMAG0472.jpg" class = "photo" id = "img72">
 			<img src = "體育館/IMAG0475.jpg" class = "hide" id = "img75">
