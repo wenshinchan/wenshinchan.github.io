@@ -183,11 +183,14 @@ body	{background-image: url(back.jpg);
 			document.getElementById("mac").addEventListener( "click", gogo, false );
 			}
 		function gogo(){
+			fal = document.getElementById( "fal" );
+			fal.play();
 			document.getElementById("mac").setAttribute("class","basic");
 			document.getElementById("lock").setAttribute("class","lock");
 			document.getElementById("lock").addEventListener( "click", gogogo, false );
 		}
 		function gogogo(){
+			
 			document.getElementById("mac").setAttribute("class","basic");
 			document.getElementById("lock").setAttribute("class","lock");
 			document.getElementById("talk1").setAttribute("class","talk1");
@@ -199,6 +202,8 @@ body	{background-image: url(back.jpg);
 			document.getElementById("talk1").addEventListener( "click", nextone, false );
 		}
 		function nextone(){
+			yes = document.getElementById( "yes" );
+			yes.play();
 			document.getElementById("mac").setAttribute("class","hide");
 			document.getElementById("talk1").setAttribute("class","hide");
 			document.getElementById("lock").setAttribute("class","hide");
