@@ -41,7 +41,13 @@ body	{background-image: url(back.jpg);
 				 left: 50%;
 				 margin-left:350px;
 				 z-index:2;}
-.talk	{cursor:pointer;
+.talk	{
+				 position:absolute;
+				 top:440px;
+				 left: 50%;
+				 margin-left:-500px;
+				 z-index:2;}
+.talk1	{cursor:pointer;
 				 position:absolute;
 				 top:440px;
 				 left: 50%;
@@ -148,7 +154,7 @@ body	{background-image: url(back.jpg);
 		}
 		function red(){
 			document.getElementById("look").setAttribute("class","basic");
-			document.getElementById("talk").setAttribute("class","talk");
+			document.getElementById("talk").setAttribute("class","talk1");
 			document.getElementById("red").setAttribute("class","red");
 			document.getElementById("word").setAttribute("class","word");
 			document.getElementById("talk").addEventListener( "click", gotodorm, false );
@@ -184,7 +190,7 @@ body	{background-image: url(back.jpg);
 		function gogogo(){
 			document.getElementById("mac").setAttribute("class","basic");
 			document.getElementById("lock").setAttribute("class","lock");
-			document.getElementById("talk1").setAttribute("class","talk");
+			document.getElementById("talk1").setAttribute("class","talk1");
 			document.getElementById("red").setAttribute("class","hide");
 			document.getElementById("mad").setAttribute("class","red");
 			document.getElementById("f").setAttribute("class","word");
@@ -296,6 +302,8 @@ body	{background-image: url(back.jpg);
 			document.getElementById("X").addEventListener( "click",gameover, false );
 		}
 		function gameover(){
+		  fal = document.getElementById( "fal" );
+			fal.play();
 		document.getElementById("O").setAttribute("class","hide");
 			document.getElementById("X").setAttribute("class","hide");
 			document.getElementById("1").setAttribute("class","hide");
@@ -336,6 +344,8 @@ body	{background-image: url(back.jpg);
 			document.getElementById("X1").addEventListener( "click",gameover, false );
 		}
 		function game2(){
+		    yes = document.getElementById( "yes" );
+			yes.play();
 			document.getElementById("copy").setAttribute("class","basic");
 			document.getElementById("1").setAttribute("class","hide");
 			document.getElementById("2").setAttribute("class","hide");
@@ -349,6 +359,8 @@ body	{background-image: url(back.jpg);
 			document.getElementById("X2").addEventListener( "click",game3, false );
 			}
 		function game3(){
+		    yes = document.getElementById( "yes" );
+			yes.play();
 			document.getElementById("copy").setAttribute("class","basic");
 			document.getElementById("3").setAttribute("class","hide");
 			document.getElementById("4").setAttribute("class","hide");
@@ -362,6 +374,8 @@ body	{background-image: url(back.jpg);
 			document.getElementById("X3").addEventListener( "click",gameover, false );
 		}
 		function game4(){
+		    yes = document.getElementById( "yes" );
+			yes.play();
 			document.getElementById("copy").setAttribute("class","basic");
 			document.getElementById("5").setAttribute("class","hide");
 			document.getElementById("6").setAttribute("class","hide");
@@ -387,6 +401,12 @@ body	{background-image: url(back.jpg);
     </audio>
 	<audio id = "door" preload = "auto">
          <source src = "女二/開門聲.mp3" type = "audio/mpeg">
+    </audio>
+	<audio id = "yes" preload = "auto">
+         <source src = "女二/答對音效.mp3" type = "audio/mpeg">
+    </audio>
+	<audio id = "fal" preload = "auto">
+         <source src = "女二/FALSE.mp3" type = "audio/mpeg">
     </audio>
     <div>
 		<img src = "女二/女二.jpg" class = "basic" alt = "dorm" id = "dorm">
